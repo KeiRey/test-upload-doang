@@ -7,11 +7,11 @@ const PORT = 3000;
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     const uploadDir = path.join(__dirname, 'uploads');
-    cb(null, uploadDir); // Menentukan folder penyimpanan
+    cb(null, uploadDir); 
   },
   filename: (req, file, cb) => {
     const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
-    cb(null, uniqueSuffix + '-' + file.originalname); // Menambahkan nama unik pada file
+    cb(null, uniqueSuffix + '-' + file.originalname); 
   }
 });
 
